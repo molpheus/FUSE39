@@ -12,15 +12,10 @@ public class TitleBehavior : MonoBehaviour
     public float FadeSpeed;
     float TitleAlpha;
 
-    public void Initialize()
-    {
-        clicked = false;
-
-        this.gameObject.SetActive(true);
-    }
-
     void Awake()
     {
+        this.gameObject.SetActive(true);
+
         if (Instance == null)
         {
             Instance = this;
@@ -71,6 +66,7 @@ public class TitleBehavior : MonoBehaviour
         }
         else
         {
+            clicked = false;
             this.gameObject.SetActive(false);
         }
     }
