@@ -6,7 +6,7 @@ public class Shot : MonoBehaviour
 {
     public GameObject prePos;
     public GameObject prant;
-    private int EnergieAll;
+    public int EnergieAll;
     public EnergieAll Energie;
     bool Push = false; 
     bool Finish = false; 
