@@ -6,18 +6,10 @@ public class TitleBehavior : MonoBehaviour
 {
     public static TitleBehavior Instance;
 
-    GameObject Gameplay;
-    bool clicked = false;
+    bool TitleToGame = false;
     public CanvasGroup TitleUI;
     public float FadeSpeed;
     float TitleAlpha;
-
-    public void Initialize()
-    {
-        clicked = false;
-
-        this.gameObject.SetActive(true);
-    }
 
     void Awake()
     {
@@ -31,39 +23,25 @@ public class TitleBehavior : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
+        // Start is called before the first frame update
     void Start()
     {
-        TitleIntro();
+        TitleAlpha = 1.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (clicked == false)
+        if (TitleToGame == false)
         {
-            if (Input.GetMouseButton(0))
-            {
-                SoundController.I.PlaySE(SoundController.SE.Ok);
-                clicked = true;
-            }
+            if (Input.GetMouseButton(0)) TitleToGame = true;
             else return;
         }
         TitleExit();
     }
 
-    public void TitleIntro()
-    {
-        this.gameObject.SetActive(true);
-        clicked = false;
-        TitleAlpha = 1.0f;
-        Gameplay = GameObject.Find("Game");
-    }
-
     void TitleExit()
     {
-        Gameplay.SetActive(true);
-
         if (TitleAlpha > 0)
         {
             TitleAlpha -= Time.deltaTime * FadeSpeed;
@@ -71,7 +49,8 @@ public class TitleBehavior : MonoBehaviour
         }
         else
         {
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
+        // ゲームプレハブを呼び出す
     }
 }

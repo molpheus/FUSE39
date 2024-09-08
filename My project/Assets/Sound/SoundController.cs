@@ -117,15 +117,6 @@ public class SoundController : MonoBehaviour
         _sfxSource.Play();
     }
 
-    public void StopBGM()
-        => _bgmSource.Stop();
-
-    public void StopSE()
-        => _seSource.Stop();
-
-    public void StopSFX()
-        => _sfxSource.Stop();
-
 #if false
     private void OnGUI()
     {
