@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 185951315824058240}
   - component: {fileID: 6740076116698851112}
   m_Layer: 0
-  m_Name: Title
+  m_Name: TItle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23666b420cd2a61459e5d38922bee5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playing: {fileID: 0}
-  TitleToGame: 0
   TitleUI: {fileID: 6786842604051812628}
   FadeSpeed: 2
 --- !u!1 &3108883533469195629
@@ -111,7 +109,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1779198935933343122
 MonoBehaviour:
