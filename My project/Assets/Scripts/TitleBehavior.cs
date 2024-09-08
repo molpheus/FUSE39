@@ -6,7 +6,7 @@ public class TitleBehavior : MonoBehaviour
 {
     public static TitleBehavior Instance;
 
-    [SerializeField] GameObject Gameplay;
+    GameObject Gameplay;
     bool clicked = false;
     public CanvasGroup TitleUI;
     public float FadeSpeed;
@@ -54,8 +54,10 @@ public class TitleBehavior : MonoBehaviour
 
     public void TitleIntro()
     {
+        this.gameObject.SetActive(true);
         clicked = false;
         TitleAlpha = 1.0f;
+        Gameplay = GameObject.Find("Game");
     }
 
     void TitleExit()
